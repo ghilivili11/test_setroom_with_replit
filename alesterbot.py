@@ -39,7 +39,7 @@ def load_room_id() -> str:
 
         raise RuntimeError(f"{CONFIG_PATH} must contain a valid UUID room_id.")
 
-    room_id = os.environ.get("693b2f4ee362ce74ad133ce8", "").strip()
+    room_id = os.environ.get("HIGHRISE_ROOM_ID", "").strip()
 
     if not valid_room_id(room_id):
         raise RuntimeError(
@@ -136,8 +136,8 @@ class MinimalHighriseBot(BaseBot):
 
 async def run_controller() -> None:
     """Run the SDK and restart its fixed-room connection when !setroom is used."""
-    token = os.environ.get("a24352f198d5fb3cba1023be8c2b8facbff67a689851baf6e0c638019b03c513", "").strip()
-    owner_id = os.environ.get("18.16.89", "").strip()
+    token = os.environ.get("HIGHRISE_BOT_TOKEN", "").strip()
+    owner_id = os.environ.get("HIGHRISE_OWNER_ID", "").strip()
 
     if not token:
         raise RuntimeError("HIGHRISE_BOT_TOKEN is not set.")
