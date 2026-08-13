@@ -136,7 +136,7 @@ class MinimalHighriseBot(BaseBot):
 
 async def run_controller() -> None:
     """Run the SDK and restart its fixed-room connection when !setroom is used."""
-    token = os.environ.get("171f93e76cf7ac6d67838cd4444546b49aa63f37ef7bbd3a527945079864f165", "").strip()
+    token = os.environ.get("a24352f198d5fb3cba1023be8c2b8facbff67a689851baf6e0c638019b03c513", "").strip()
     owner_id = os.environ.get("18.16.89", "").strip()
 
     if not token:
